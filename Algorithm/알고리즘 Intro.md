@@ -141,6 +141,23 @@
  - <u>연습문제 1</u> `Gravity` ( p. 16 ) > IM레벨
 
  > 2중 for문 + 리스트
+ >
+ > ```python
+ > # gravity.py
+ > data = [7,4,2,0,0,6,0,7,0]
+ > result = 0
+ > maxHeight = 0
+ > for i in range(len(data)):
+ >     #i의 최대 낙차 값은 len(data) - (i+1)
+ >     #i이후의 모든 행을 검사한다.
+ >     maxHeight = len(data) - (i + 1)
+ >     for j in range(i+1, len(data), 1):
+ >         if data[i] <= data[j] : #아래 행이 i행보다 상자가 많을 때, 최대낙차값을 1감소시킴
+ >             maxHeight -= 1
+ >     if result < maxHeight:
+ >         result = maxHeight
+ > print(result)
+ > ```
 
  - <u>연습문제 2</u> `Baby-gin Game` ( p.19 )
 
@@ -149,6 +166,8 @@
  > 완전검색하면 정답은 무조건 맞추게 돼있다.
  >
  > 완전검색 - 6! 가지수를 전부 검증
+ >
+ > > 밑에 `순열`에 코드 있음
 
 
 
@@ -348,14 +367,52 @@
 
 
 
-### 문풀
+##  C. 문풀 (review - 20190115)
 
-view
+- [1206. view](https://swexpertacademy.com/main/talk/solvingClub/problemView.do?solveclubId=AWhKdvi6ECkDFAS6&contestProbId=AV134DPqAA8CFAYh&probBoxId=AWhKdvi6ECoDFAS6&type=PROBLEM&problemBoxTitle=1%EC%9B%94+14%EC%9D%BC&problemBoxCnt=1)
 
 ```python
+# 내 답
+
 import sys
 sys.stdin = open("view_input.txt")
+T = 10
+for tc in range(10):
+    ans = 0
+    N = int(input())
+    data = list(map(int, input().split()))
+    #
+    peak = []
+    for i in range(2, len(data)):
+        if data[i-1] < data[i] and data[i] > data[i+1] and data[i-2] < data[i] and data[i+2] < data[i]:
+            peak.append(i)
+    for p in peak:
+        ans += min(data[p]-data[p-2], data[p]-data[p-1], data[p]-data[p+1], data[p]-data[p+2],)
 
+    print("#{} {}".format(tc+1, ans))
+```
+
+```python
+# 강사님 답 (C 스타일)
+
+import sys
+sys.stdin = open("(1206)View_input.txt")
+T = 10
+for tc in range(T):
+    N = int(input())
+    data = list(map(int, input().split()))
+    ans = 0
+
+    for i in range(2, N-2):
+        min = 987654321            #min 함수 안 쓰고 엄청 큰 값 줘서 비교
+        for j in range(5):         #j(==2)기준으로 양쪽 2개씩
+            if j != 2:
+                if data[i]-data[i-2+j] < min:
+                    min = data[i] - data[i-2+j]
+        if min > 0:
+            ans += min
+
+    print("#{} {}".format(tc+1, ans)) 
 ```
 
 
