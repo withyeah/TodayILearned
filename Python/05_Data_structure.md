@@ -1,4 +1,4 @@
-# 05_Data_structure
+# 05_01_Data_structure
 
 20190118
 
@@ -87,3 +87,82 @@
 
 ### B. 탐색 및 정렬
 
+- `index(x)` : x값을 찾아 그 index를 반환, x없을 시 오류 발생 
+- `count(x)` : x의 갯수 리턴
+- `sort()` : 원본 리스트를 변형시키고 none을 리턴 (sorted는 원본 변형 X)
+  - .sort(reverse=True)
+- `reverse()` : 반대로 뒤집기 (정렬 아님)
+
+
+
+### C. 복사
+
+- a = b 하고 b를 수정했을 때 a가 바뀔까?
+
+  - a가 mutable (리스트, 딕셔너리 등) 이면 바뀜, immutable (int) 면 X
+
+- 얕은 복사
+
+  - ```python
+    a = [1, 2, 3]
+    b = a[:] # or b = list(a)
+    b[0] = 5
+    print(a)
+    # [1, 2, 3]
+    ```
+
+  - ```python
+    a = [1, 2, [1, 2]]
+    b = a[:]
+    b[2][0] = 3
+    print(a)
+    # [1, 2, [3, 2]]
+    # > 중첩된 상황에는 a에 영향을 줌
+    ```
+
+- 깊은 복사 (내부에 있는 모든 객체까지 새롭게 값이 변경)
+
+  - ```python
+    import copy
+    a = [1, 2, [1, 2]]
+    b = copy.deepcopy(a)
+    b[2][0] = 3
+    print(a)
+    # [1, 2, [1, 2]]
+    ```
+
+
+
+### D. 삭제
+
+- `clear()` : 리스트의 모든 항목을 삭제
+
+
+
+# List Comprehension
+
+> [ 식 for 변수 in 리스트 ]
+
+```python
+names = ["Rick Sanchez", "Morty Smith", "Summer Smith", "Jerry Smith", "Beth Smith"]
+for name in names:
+    spl = name.split()
+    first_name = spl.pop(0)
+    print(first_name.lower())
+
+# list comprehension
+first_name = [name.split()[0].lower() for name in names]
+print(first_name)
+```
+
+ 
+
+## A. 활용법
+
+- 여러개의 for 혹은 if 문을 중첩적으로 사용 가능
+
+- 리스트 표현식에 for 여러 개일 때 뒤에서 앞 순서로 처리됨
+
+  - [식 for 변수1 in 리스트1 if 조건식1 for 변수2 in 리스트2 if 조건식2]
+  - [식 for 변수 in 리스트 if 조건식]
+  - [식 if 조건식 else 조건식 for 변수 in 리스트 ]
