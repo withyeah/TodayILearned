@@ -37,9 +37,106 @@ print(dust_air)
 ### map(function, iterable)
 
 - iterable의 요소를 지정된 함수로 처리해주는 함수
+
   - iterable : list, dict, set, str, bytes, tuple, range
+
 - return은 map_object형태
+
 - map은 원본을 변경하지 않고 새 값을 생성함
+
 - ex) list(map( 함수, 리스트 ))
+
 - for문으로 반복하면서 요소를 변환하기 어려울 때 map을 사용하면 편리
-- 
+
+- function에는 사용자 정의 함수도 들어갈 수 있음
+
+  - ```python
+    def cube(n):
+        return n**3
+    a = [1, 2, 3]
+    list(map(cube, a))
+    #[1, 8, 27]
+    ```
+
+
+
+### zip(*iterables)
+
+- 복수의 iterable한 것들을 모아줌
+
+- 튜플의 모음으로 구성된 zip object를 리턴
+
+  ```python
+  girls = ['jane', 'iu', 'mary']
+  boys = ['justin', 'david', 'kim']
+  list(zip(girls, boys))
+  #[('jane', 'justin'), ('iu', 'david'), ('mary', 'kim')]
+  ```
+
+  ```python
+  #dict comprehension
+  {girl: boy for girl in girls for boy in boys}
+  # dictionary에서 key는 유일한 값
+  #{'jane': 'kim', 'iu': 'kim', 'mary': 'kim'}
+  ```
+
+  ```python
+  {girl: boy for girl, boy in zip(girls, boys)}
+  #{'jane': 'justin', 'iu': 'david', 'mary': 'kim'}
+  ```
+
+- zip은 길이가 같을 때 사용해야 함. 길이가 짧은 것으르 기준으로 구성
+
+- 패킹/언패킹
+
+  - ```python
+    letters = ['a', 'b', 'c']
+    nums = [1, 2, 3]
+    zip_list = list(zip(letters, nums))
+    print(zip_list)
+    #[('a', 1), ('b', 2), ('c', 3)]
+    ```
+
+    ```python
+    new_letters, new_nums = zip(*zip_list)
+    print(new_letters) #('a', 'b', 'c')
+    print(new_nums) #(1, 2, 3)
+    ```
+
+    
+
+### filter( function, iterable )
+
+- iterable에서 function의 리턴값이 참인 것들만 구성하여 반환
+
+  - ```python
+    def even(n):
+        return not n % 2
+    a = [1, 2, 3, 4]
+    list(filter(even, a))
+    # false는 버리고 true인 애들만 반환
+    ```
+
+
+
+## C. 세트 메소드 활용
+
+### 추가 및 삭제
+
+- `add(elem)` : elem을 세트에 추가/ 여러번 해도 한 번만 추가됨
+
+- `update(*others)` : 여러가지 값(iterable)을 순차적으로 추가
+
+  - ```python
+    a = {1, 2, 3}
+    a.update((5, 5, 5, 2), {7, 9}, [14, 5, 532])
+    # iterable한 값만 들어간다 *정수 넣으면 안됨
+    print(a)
+    #>{1, 2, 3, 532, 5, 7, 9, 14}
+    ```
+
+- `remove(elem)` : elem을 삭제, 없으면 키에러
+
+- `discard(elem)` : elem을 삭제, 없어도 키에러X
+
+- `pop()` : 임의의 원소를 리턴하고 삭제
