@@ -6,9 +6,22 @@
 
 ### 추가 및 삭제
 
-- `pop(key[, default])` : key가 딕셔너리에 있으면 리턴하고 제거, 없으면 default를 반환. default가 없는 상태에서 key가 없으면 키에러
-- `update({key, value})` : key, value 페어를 추가. key가 이미 존재한다면 value를 덮어씀
-- `get(key[, default])` : key를 통해 value를 가져옴. default는 기본적으로 None > key error발생하지 않음
+- `pop(key, default)` : key가 딕셔너리에 있으면 리턴하고 제거, 없으면 default를 반환. default가 없는 상태에서 key가 없으면 키에러
+
+- `update({key: value})` : key, value 페어를 추가. key가 이미 존재한다면 value를 덮어씀
+
+  - return None
+
+  - ```python
+    특이한거 발견
+    >>> dust
+    {'서울': 72, '경기': 82, '대전': 29, '중국': 200}
+    >>> dust.update({'부산', '제주'})
+    >>> dust
+    {'서울': 72, '경기': 82, '대전': 29, '중국': 200, '부': '산', '제': '주'}
+    ```
+
+- `get(key, default)` : key를 통해 value를 가져옴. default는 기본적으로 None > key error발생하지 않음
 
 
 
@@ -28,6 +41,7 @@ print(dust_air)
 {key: '매우나쁨' if value > 150 else '나쁨'
                 if value > 80 else '보통'
                 if value > 30 else '좋음' for key, value in dust.items()}
+# if 위에서부터 돌음!
 ```
 
 
@@ -121,7 +135,7 @@ print(dust_air)
 
 ## C. 세트 메소드 활용
 
-### 추가 및 삭제
+### 추가 및 삭제 pop 제외 return None
 
 - `add(elem)` : elem을 세트에 추가/ 여러번 해도 한 번만 추가됨
 
@@ -140,3 +154,5 @@ print(dust_air)
 - `discard(elem)` : elem을 삭제, 없어도 키에러X
 
 - `pop()` : 임의의 원소를 리턴하고 삭제
+
+  - 세트기 때문에 pop(i)처럼 인덱스 값을 줄 수 없음 무조건 랜덤 원소 리턴

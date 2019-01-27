@@ -1,12 +1,14 @@
 # 05_01_Data_structure
 
-20190118
+20190118 작성
+
+20190126 추가
 
 ##### 
 
 ## 문자열 메소드 활용하기
 
-### A. 변형
+### A. 변형 - return 값
 
 - `capitalize()` : 맨 앞 대문자, 나머지 소문자로 반환
 
@@ -35,7 +37,7 @@
 
 
 
-### B. 탐색 및 검증
+### B. 탐색 및 검증 return 값
 
 - `find(x)` : x의  첫 번째 위치를 리턴. 없으면 -1 
 - `index(x)` : x의 첫 번째 위치를 리턴. 없으면 오류
@@ -56,11 +58,18 @@
 
 ## 리스트 메소드 활용하기
 
-### A. 값 추가 및 삭제
+### A. 값 추가 및 삭제 pop 말고 return None
 
 - `append(x)`
 
-- `extend(iterable)` : 리스트에 iterable한 값을 붙일 수 있음
+  - ```python
+    >>> a = [1, 2, 3, 4, 5]
+    >>> b = a.append(6)
+    >>> a
+    [1, 2, 3, 4, 5, 6]
+    ```
+
+- `extend(iterable)` : <u>리스트에 **iterable**한 값을 붙일 수 있음</u>
 
   - ```python
     cafe.extend(['angel','bbaek'])
@@ -81,6 +90,8 @@
 
 - `remove(x)` : 값이 x인 것을 삭제. 리스트에 값 없으면 오류 발생
 
+  - return None
+
 - `pop(i)` : i 위치에 있는 값을 리턴하고 삭제, i 미지정 > 마지막 항목
 
 
@@ -88,10 +99,15 @@
 ### B. 탐색 및 정렬
 
 - `index(x)` : x값을 찾아 그 index를 반환, x없을 시 오류 발생 
+  - return 값
 - `count(x)` : x의 갯수 리턴
+  - return 값
 - `sort()` : 원본 리스트를 변형시키고 none을 리턴 (sorted는 원본 변형 X)
   - .sort(reverse=True)
+  - sorted는 메서드 아니고 빌트인 (리스트의 속성 아님) > sorted([4, 5, 7, 2, 9]) 이런 식으로 씀, object를 리턴
 - `reverse()` : 반대로 뒤집기 (정렬 아님)
+  - return None
+  - sorted처럼 reversed는 메서드 아니고 빌트인 (리스트의 속성 아님), object를 리턴
 
 
 
@@ -99,7 +115,25 @@
 
 - a = b 하고 b를 수정했을 때 a가 바뀔까?
 
-  - a가 mutable (리스트, 딕셔너리 등) 이면 바뀜, immutable (int) 면 X
+  - a가 mutable (리스트, 딕셔너리,세트) 이면 바뀜, immutable (int 등) 면 X
+
+  ```python
+  >>> a = [7, 5, 3, 2]
+  >>> b = a
+  >>> b
+  [7, 5, 3, 2]
+  >>> b[0] = 1
+  >>> a
+  [1, 5, 3, 2]
+  ```
+
+  ```python
+  >>> a = 3
+  >>> b = a
+  >>> b = 1
+  >>> a
+  3
+  ```
 
 - 얕은 복사
 
@@ -133,7 +167,7 @@
 
 
 
-### D. 삭제
+### D. 삭제 return None
 
 - `clear()` : 리스트의 모든 항목을 삭제
 
