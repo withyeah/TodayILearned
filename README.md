@@ -1,7 +1,5 @@
 # TodayILearned
-****여기 정리해야됨****
-
-
+20190201 update
 
 
 
