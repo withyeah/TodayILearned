@@ -1,5 +1,5 @@
 # TodayILearned
-20190205 updated
+20190206 everything up to date
 
 
 
