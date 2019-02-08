@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EDIT</h1>
+    <form action="/movies/{{ movie.id }}/update/">
+        <div>title : <input type="text" value="{{ movie.title }}" name="title"/></div>
+        <div>title_en : <input type="text" value="{{ movie.title_en }}" name="title_en"/></div>
+        <div>audience : <input type="number" value="{{ movie.audience }}" name="audience"/></div>
+        <div>open_date : <input type="date" value="{{ movie.open_date }}" name="open_date"/></div>
+        <div>genre : <input type="text" value="{{ movie.genre }}" name="genre"/></div>
+        <div>watch_grade : <input type="text" value="{{ movie.watch_grade }}" name="watch_grade"/></div>
+        <div>score : <input type="number" value="{{ movie.score }}" name="score"/></div>
+        <div>poster_url : <input type="text" value="{{ movie.poster_url }}" name="poster_url"/></div>
+        <div>description : <textarea cols=50 rows=5 name="description">{{ movie.description }}</textarea></div>
+        <div><input type="submit" value="Submit"/></div>
+    </form>
+</body>
+</html>
