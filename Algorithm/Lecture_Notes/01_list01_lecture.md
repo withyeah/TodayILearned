@@ -339,20 +339,24 @@
 > - 과정
 >   - 1단계 : Data에서 각 항목들의 발생 회수를 세고, 정수 항목들로 직접 인덱스 되는 카운트 배열 counts에 저장
 >   - 2단계 : 정렬된 집합에서 각 항목의 앞에 위치할 항목의 개수를 반영하기 위해 counts의 원소를 조정
->   - ...
->   - 못 따라감
+>     - [1, 3, 1, 1, 2] > [1, 4, 5, 6, 8]
+>     - 원소가 정렬될 때 리스트의 몇 번째 위치에 들어가야 하는지 보여주기 위함
+>   - 3단계 : 데이터의 마지막 항목부터 정렬
+>     - data[-1]이 1이므로 counts[1]의 숫자를 1감소시킴(4 > 3), temp[3]에 1삽입
+>     - data[-2] == 4, counts[4] -= 1, temp[counts[4]-1] 에 4 삽입
+>     - 반복
 >
 > ```python
 > def CountingSort(A, B, C):
->     for i in range(len(A)):
->         C[A[i]] += 1
+>  for i in range(len(A)):
+>      C[A[i]] += 1
 > 
->     for i in range(1, len(C)):
->         C[i] += C[i-1]
+>  for i in range(1, len(C)):
+>      C[i] += C[i-1]
 > 
->     for i in range(len(B)-1, -1, -1):
->         B[C[A[i]]-1] = A[i]
->         C[A[i]] -= 1
+>  for i in range(len(B)-1, -1, -1):
+>      B[C[A[i]]-1] = A[i]
+>      C[A[i]] -= 1
 > 
 > A = [1, 4, 5, 1, 2, 4, 5, 7, 9, 3]
 > B = [0] * len(A)
@@ -360,7 +364,6 @@
 > CountingSort(A, B, C)
 > print(B)
 > 
-> # 못따라감ㅠㅠㅠㅠ 디버깅 해보기
 > ```
 
 
