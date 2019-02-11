@@ -12,8 +12,8 @@
 
 - 물건을 쌓아 올리듯 자료를 쌓아 올린 형태의 자료구조
 - 스택에 저장되니 자료는 선형구조를 가짐
-  - 선형구조 : 자료 간의 관계가 1대 1
-  - 비선형구조 : 자료 간의 관계가 1대 N (ex.트리)
+  - 선형구조 : 자료 간의 관계가 1대 1 (ex.리스트)
+  - 비선형구조 : 자료 간의 관계가 1대 N (ex.트리) / N대 N (ex.그래프)
 - 스택에 자료를 삽입하거나 스택에서 자료를 꺼낼 수 있음
 - 마지막에 삽입한 자료를 가장 먼저 꺼냄
 - 후입선출(LIFO, Last-In-First-Out)이라고 부름
@@ -22,6 +22,8 @@
 
 
 ### B. Stack의 구현
+
+> ADT : 자료구조 + 연산
 
 - <u>자료구조</u>
   - 자료를 선형으로 저장할 저장소가 필요함
@@ -32,7 +34,7 @@
   - 삽입 (push) : 저장소에 자료를 저장
   - 삭제 (pop) : 저장소에서 자료를 꺼냄 (삽입한 자료의 역순으로)
   - isEmpty : 스택이 공백인지 아닌지 확인하는 연산
-  - peek : 스택의 top에 있는 item을 반환하는 연산
+  - peek : 스택의 top에 있는 item을 반환하는 연산 ( pop : 리턴 후 꺼냄 / peek : 리턴만 함 )
 
 
 
@@ -50,28 +52,63 @@
 
 - push 알고리즘
 
+  > top 을 한 칸 위로 올리고, top이 가리키는 위치에 item을 삽입
+
   ```python
+  # python 스타일 : 리스트의 크기는 무한
+  s = []
   def push(item):
       s.append(item)
   ```
 
+  ```python
+  # 교수님 강의 > C스타일 : 배열의 사이즈 한정되어 있음
+  SIZE = 100
+  stack = [0] * SIZE
+  top = -1
+  def push(item):
+      global top
+      if top > SIZE - 1:
+          return
+      else:
+          top += 1
+          stack[top] = item
+  ```
+
 - pop 알고리즘
 
+  > top에 있는 item을 꺼냄 + 리턴 후 top을 한 칸 아래로 이동
+
   ```python
+  # python 스타일
   def pop():
       if len(s) == 0: # 공백스택
           # underflow 처리
           return
       else:
-          return s.pop(-1)
+          return s.pop(-1) # -1은 생략해도 됨
   ```
 
-- 구현하기
+  ```python
+  # 교수님 강의 > C스타일 : pop해도 stack에 데이터 남아있음 (pop 후 같은 자리에 덮어쓰기 가능)
+  def pop():
+      global top
+      if top == -1:
+          print("Stack is Empty!")
+          return 0
+      else:
+          result = stack[top]
+          top -= 1
+          return result
+  ```
+
+- 구현하기 < 연습문제 1 >
 
   1. 스택을 구현하기
   2. 구현한 스택을 이용하여 3개의 데이터를 스택에 저장하고 다시 3번 꺼내서 출력하기
 
   ```python
+  # python 스타일
   def push(item):
       s.sppend(item)
       
@@ -91,11 +128,42 @@
   print('pop item =>', pop())
   ```
 
+  ```python
+  # c 스타일
+  SIZE = 100
+  stack = [0] * SIZE
+  top = -1
+  def push(item):
+      global top
+      if top > SIZE - 1:
+          return
+      else:
+          top += 1
+          stack[top] = item
+  
+  def pop():
+      global top
+      if top == -1:
+          print("Stack is Empty!")
+          return 0
+      else:
+          result = stack[top]
+          top -= 1
+          return result
+  
+  push(1)
+  push(2)
+  push(3)
+  print('pop item =>', pop())
+  print('pop item =>', pop())
+  print('pop item =>', pop())
+  ```
+
 - 스택 구현 고려사항
 
   - 리스트를 사용하여 스택을 구현하는 경우
     - 장점 : 구현이 용이함
-    - 단점 : 리스트의 크기를 변경하는 작업은 내부적으로 큰 overhead 발생 작업으로 많은 시간이 소요됨
+    - 단점 : 리스트의 크기를 변경하는 작업은 내부적으로 큰 overhead 발생 작업으로 많은 시간이 소요됨 | 스택의 크기를 변경하기가 어렵다
 
   > 해결방법
 
@@ -111,16 +179,84 @@
 ### A. 괄호검사
 
 - 괄호의 종류 : 대괄호[], 중괄호{}, 소괄호()
+
 - 조건
   1. 왼쪽 괄호의 개수와 오른쪽 괄호의 개수가 같아야 함
   2. 같은 괄호에서 왼쪽 괄호는 오른쪽 괄호보다 먼저 나와야 함
   3. 괄호 사이에는 포함관계만 존재함
+
 - 잘못된 괄호 사용의 예
+
   - (a(b) | a(b)c) | a{b(c[d]e}f)
+
 - 스택을 이용한 괄호 검사
   - 좌 괄호 나오면 스택에 push
-  - 우 괄호 나오면 스택에서 top 괄호를 pop 후 우 괄호와 짝이 맞는지 확인
+  - 우 괄호 나오면 스택에서 top 괄호를 pop & 우 괄호와 짝이 맞는지 확인 > 짝이 맞으면 버림 / 짝이 맞지 않으면 오류!
   - 괄호 수식이 끝났는데 스택에 괄호가 남아있으면 오류!
+
+- 괄호검사 프로그램 구현 < 연습문제 2 >
+
+  ```python
+  # 내 코드
+  s = []
+  
+  def push(item):
+      s.append(item)
+  
+  def pop():
+      if len(s) == 0:
+          print('Stack is Empty!')
+          return
+      else:
+          return s.pop(-1)
+  
+  def parencheck(a):
+      for i in a:
+          if i == '(':
+              push('(')
+          elif i == ')':
+              ret = pop()
+              if ret != '(':
+                  return False
+      return not s
+  
+  print(parencheck('()()((()))')) # True
+  ```
+
+  ```python
+  # 강사님 코드
+  s = list()
+  def push(item):
+      s.append(item)
+  
+  def pop():
+      if len(s) == 0:
+          print("stack is empty")
+          return
+      else:
+  
+          return s.pop(-1)
+  
+  
+  def isEmpty():
+      if lens(s) == 0: return True
+      else: Return False
+  
+  def check_matching(data):
+      for i in range(len(data)):
+          if data[i] == "(":
+              push(data[i])
+          elif data[i] == ")":
+              if isEmpty(): return False
+              pop()
+      #         오른쪽 만나면 pop 왼쪽 만나면 push 해주면 됨
+      if not isEmpty(): return False
+      else: return True
+  
+  data = input()
+  print(check_matching(data))
+  ```
+
 
 
 
@@ -132,16 +268,30 @@
   - 함수의 실행이 끝나면 시스템 스택의 top원소(스택 프레임)를 삭제(pop)하면서 프레임에 저장되어 있던 복귀주소를 확인하고 복귀
   - 함수 호출과 복귀에 따라 이 과정을 반복하여 전체 프로그램 수행이 종료되면 시스템 스택은 공백 스택이 됨
 - 함수 호출 수행 순서
-  - ㅇㄹ
+
+  ![image](https://user-images.githubusercontent.com/45819975/52543966-1e494f80-2df1-11e9-8c8c-3049b528bbd2.png)
 - 재귀 호출
   - 자기 자신을 호출하여 순환 수행되는 것
+
   - 함수에서 실행해야 하는 작업의 특성에 따라 일반적인 호출방식보다 재귀 호출 방식을 사용하여 함수를 들면 프로그램의 크기를 줄이고 간단하게 작성할 수 있음
+
   - 디버깅이 어렵고 잘못 작성하게 되면 수행 시간이 많이 소요됨
+
   - 예시) factorial
     - n에 대한 factorial : 1부터 n까지의 모든 자연수를 곱하여 구하는 연산
     - 마지막에 구한 하위 값을 이용하여 상위 값을 구하는 작업을 반복
     - 스택 프레임으로 스택에 저장되는 값이 입력값이 틀린 같은 함수의 스택 프레임을 저장한다는 차이점이 있음 ????
 
+    ![image](https://user-images.githubusercontent.com/45819975/52544031-69fbf900-2df1-11e9-8ccc-eea0d33eb081.png)
+
+    ```python
+    def fact(n):
+        if n == 1:
+            return 1
+        else:
+            return n * fact(n-1)
+    # 디버깅 해보면 frames에 스택 쌓이고 사라지는 과정 나타남
+    ```
 
 
 ## Memoization
@@ -155,8 +305,8 @@
   - 피보나치 수열의 i 번째 값을 계산하는 함수 F를 정의하면 다음과 같음
 
     ```
-    F0 = 0, F1 = 1
-    Fi = Fi-1 + Fi-2 for i >= 2
+    F0 = 0, F1 = 1                  # basis
+    Fi = Fi-1 + Fi-2 for i >= 2     # inductive
     ```
 
   - 위의 정의로부터 피보나치 수열의 i번째 항을 반환하는 함수를 재귀함수로 구현할 수 있음
@@ -171,7 +321,7 @@
           return fibo(n-1) + fibo(n-2)
   ```
 
-  > 문제점 : 엄청난 중복 호출이 존재함
+  > 문제점 : 엄청난 중복 호출이 존재함 ( ex. Call Tree로 그려보면 fibo(2)는 엄청 여러번 호출됨 p.171 )
 
 
 
@@ -195,16 +345,19 @@
 
   ```python
   # memo를 위한 리스트를 생성하고, 
-  # memo[0] 을 0으로, memo[1]는 1로 초기화 한
+  # memo[0] 을 0으로, memo[1]는 1로 초기화 한다
   
   def fibo1(n):
-      global memo
+      global memo  # 안써도됨
       if n >= 2 and len(memo) <= n:
           memo.append(fibo1(n-1) + fibo1(n-2))
       return memo[n]
   
   memo = [0, 1]
+  # 앞에서부터 순서대로 구해진다
   ```
+
+  - 시간복잡도 : O(n)
 
 
 
@@ -213,7 +366,7 @@
 ### A. DP(동적 계획법) 알고리즘
 
 - Dynamic Programming의 약자
-- 그리디 알고리즘과 같이 최적화 문제를 해결하는 알고리즘
+- 그리디 알고리즘과 같이 <u>최적화 문제</u>( 여러가지 답 중에 최선의 답 찾는 것 )를 해결하는 알고리즘
 - 먼저 입력 크기가 작은 부분 문제들을 모두 해결한 후에 그 해들을 이용하여 보다 큰 크기의 부분 문제들을 해결
 - 최종적으로 원래 주어진 입력의 문제를 해결하는 설계 기법
 
@@ -240,6 +393,9 @@
 
 - 피보나치 수를 DP에 적용한 알고리즘
 
+  - 위에 애들은 재귀사용하기 때문에 1000번째 수 구하려고 하면 에러나지만
+  - 이 방법으로는 구할 수 있음
+
   ```python
   def fibo2(n):
       f = [0, 1]
@@ -250,7 +406,20 @@
       return f[n]
   ```
 
+  ```python
+  # DP 팩토리얼 
+  
+  def fact_2(n):
+      f = [1]
+  
+      for i in range(1, n + 1):
+          f.append(i * f[i-1])
+  
+      return f[n]
+  ```
+
 - DP의 구현 방식
+
   - recursive 방식 : fibo1()
     - 재귀적 구조는 내부에 시스템 호출 스택을 사용하는 overhead가 발생할 수 있음
   - iterative 방식 : fibo2()
@@ -262,21 +431,21 @@
 
 ### A. DFS란?
 
-- 비선형구조인 그래프 구조는 그래프로 표현되니 모든 자료를 빠짐없이 검색하는 것이 중요
+- 비선형구조인 그래프 구조는 그래프로 표현된 모든 자료를 빠짐없이 검색하는 것이 중요
 
   - 깊이 우선 탐색 (Depth First Search, DFS)
   - 너비 우선 탐색 (Breadth First Search, BFS)
 
-- DFS 방법
+- DFS 방법 | vertex(정점), edge(간선)
 
   - 시작 정점의 한 방향으로 갈 수 있는 경로가 있는 곳 까지 깊이 탐색
   - 더 이상 갈 곳이 없게 되면, 가장 마지막에 만났던 갈림길 간선이 있는 정점으로 되돌아옴
   - 다른 방향의 정점으로 탐색을 계속 반복하여 결국 모든 정을 방문하여 순회
   - 가장 마지막에 만났던 갈림길의 정점으로 되돌아가서 다시 깊이 우선 탐색을 반복해야 하므로 후입선출 구조의 스택을 사용
+  - cf) 피보나치 수열의 call tree
 
-  
 
-###B. DFS 알고리즘
+### B. DFS 알고리즘
 
 - DFS 알고리즘
     - 시작 정점 v를 결정하여 방문
@@ -291,7 +460,8 @@
 
 - DFS 알고리즘 구현 (수도 코드)
 
-  ```python
+  ```c
+  // 스택 
   visited[], stack[] 초기화
   DFS(v)
   	v 방문;
@@ -311,4 +481,74 @@
   end DFS()
   ```
 
-  
+  ```c
+  // 재귀
+  DFS_Recursive(G, v)
+      
+      visited[ v ] = TRUE // v 방문 설정
+      
+      FOR each all w in adjacency( G, v ) // v에 인접한 모든 w에 대하여
+      	IF visited[w] != TRUE
+      		DFS_Recursive(G, w)
+  ```
+
+
+
+
+
+1. 인접행렬
+2. 인접정점의 리스트
+3. 간선의 배열
+
+
+
+
+
+<연습문제3>
+
+![image](https://user-images.githubusercontent.com/45819975/52549583-3d5ad800-2e17-11e9-84b8-a0d3da598e93.png)
+
+```python
+# 준비과정
+import sys
+sys.stdin = open('연습3_DFS_재귀_input.txt')
+
+n, e = map(int, input().split())
+n += 1
+temp = list(map(int, input().split()))
+
+G = [[0 for i in range(n)] for j in range(n)] # 2차원 초기화
+visited = [0 for i in range(n)]
+
+for i in range(0, len(temp), 2):  # 입력 받기
+    G[temp[i]][temp[i+1]] = 1
+    G[temp[i+1]][temp[i]] = 1
+```
+
+
+
+```python
+# 내 답
+def dfs(G, v):
+    visited[v] = 1
+    print(v, end=' ')
+    if visited[v] == 1:
+        for w in range(n):
+            if G[v][w] == 1 and visited[w] == 0:
+                visited[w] = 1     #안해줘도 된다
+                dfs(G, w)
+
+dfs(G, 1)
+```
+
+```python
+# 강사님 답( 비슷 )
+def dfs(v):
+    global G, visited, n
+    visited[v] = 1
+    print(v, end=' ')
+    for w in range(n):
+        if G[v][w] and not visited[w]:
+            dfs(w)
+```
+
