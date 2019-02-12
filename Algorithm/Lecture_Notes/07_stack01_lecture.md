@@ -500,11 +500,7 @@
 2. 인접정점의 리스트
 3. 간선의 배열
 
-
-
-
-
-<연습문제3>
+### C. <연습문제3>
 
 ![image](https://user-images.githubusercontent.com/45819975/52549583-3d5ad800-2e17-11e9-84b8-a0d3da598e93.png)
 
@@ -550,5 +546,121 @@ def dfs(v):
     for w in range(n):
         if G[v][w] and not visited[w]:
             dfs(w)
+```
+
+
+
+#### 추가 슬라이드 _ dfs 반복 ( 재귀X - overflow 가 나지 않는다 )
+
+```python
+STACK s
+visited[]
+DFS(v)
+	push(s, v)
+    WHILE NOT isEmpty(s)
+    	v = pop(s)
+        IF NOT visited[v]
+        	visit(v)
+            FOR each w in adjacency(v)
+            	IF NOT visited[w]
+                	push(s, w)
+```
+
+> 1-3-7-6-5-2-4 
+
+```python
+def dfs(v):
+    global G, visited, n
+    s = []
+    
+    s.append(v) # push
+    while len(s) != 0
+    	v = s.pop()
+        if not visited[v]:
+            visited[v] = 1
+            print(v, end=' ')
+            # range(n-1, 0, -1)로 주면 1-3-7-6-5-2-4로 돌고
+            # range(1, n)으로 주면 1-2-4-6-5-7-3
+            for w in range(1, n):
+                if G[v][w] == 1 and visited[w] == 0:
+                    s.append(W)
+```
+
+
+
+
+
+## workshop
+
+[ladder1](https://swexpertacademy.com/main/talk/solvingClub/problemView.do?solveclubId=AWhKdvi6ECkDFAS6&contestProbId=AV14ABYKADACFAYh&probBoxId=AWjbeWOaGo0DFAQn&type=PROBLEM&problemBoxTitle=2%EC%9B%94+11%EC%9D%BC&problemBoxCnt=1)
+
+```python
+# 문제
+점심 시간에 산책을 다니는 사원들은 최근 날씨가 더워져, 사다리 게임을 통하여 누가 아이스크림을 구입할지 결정하기로 한다.
+
+김 대리는 사다리타기에 참여하지 않는 대신 사다리를 그리기로 하였다.
+
+사다리를 다 그리고 보니 김 대리는 어느 사다리를 고르면 X표시에 도착하게 되는지 궁금해졌다. 이를 구해보자.
+
+아래 <그림 1>의 예를 살펴보면, 출발점 x=0 및 x=9인 세로 방향의 두 막대 사이에 임의의 개수의 막대들이 랜덤 간격으로 추가되고(이 예에서는 2개가 추가됨) 이 막대들 사이에 가로 방향의 선들이 또한 랜덤하게 연결된다.
+
+X=0인 출발점에서 출발하는 사례에 대해서 화살표로 표시한 바와 같이, 아래 방향으로 진행하면서 좌우 방향으로 이동 가능한 통로가 나타나면 방향 전환을 하게 된다.
+
+방향 전환 이후엔 다시 아래 방향으로만 이동하게 되며, 바닥에 도착하면 멈추게 된다.
+
+100 x 100 크기의 2차원 배열로 주어진 사다리에 대해서, 지정된 도착점에 대응되는 출발점 X를 반환하는 코드를 작성하라 (‘0’으로 채워진 평면상에 사다리는 연속된 ‘1’로 표현된다. 도착 지점은 '2'로 표현된다).
+```
+
+```
+[제약 사항]
+
+한 막대에서 출발한 가로선이 다른 막대를 가로질러서 연속하여 이어지는 경우는 없다.
+
+[입력]
+
+입력 파일의 첫 번째 줄에는 테스트 케이스의 번호가 주어지며, 바로 다음 줄에 테스트 케이스가 주어진다.
+
+총 10개의 테스트 케이스가 주어진다.
+
+[출력]
+
+#부호와 함께 테스트 케이스의 번호를 출력하고, 공백 문자 후 도착하게 되는 출발점의 x좌표를 출력한다.
+```
+
+
+
+내 답
+
+```python
+import sys
+sys.stdin = open('ladder1_input.txt')
+
+for tc in range(10):
+    n = int(input())
+    # 입력받기
+    data = [list(map(int, input().split())) for _ in range(100)]
+    # 끝나는 지점 (2) 찾기
+    for i in range(100): 
+        if data[99][i] == 2:
+            end = i
+    # 밑에서부터 올라갈 것이기 때문에 출발점 x, y 지정
+    x, y = 99, end
+    # 맨 윗줄에 도달하기 직전까지
+    while x > 0:
+        # 방문한 지점은 다시 돌아가지 못하도록 9로 표시
+        data[x][y] = 9
+        # 왼쪽에 1이 있으면 이동
+        if y-1 >= 0 and data[x][y-1] == 1:
+            y -= 1
+        # 오른쪽에 1이 있으면 이동
+        elif y+1 <= 99 and data[x][y+1] == 1:
+            y += 1
+        # 왼 오 둘 다 1없으면 한 칸 위로 이동
+        elif data[x-1][y] == 1:
+            x -= 1
+	
+    # x가 0일 때 y값 출력 (사다리의 시작점)
+    print(f'#{tc+1} {y}')
+
 ```
 
