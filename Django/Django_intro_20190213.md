@@ -421,7 +421,7 @@ def hello(request, name):
 
 
 
-## 6. Template Interitance
+## 6. Template Inheritance
 
 앱/templates/base.html 생성
 
