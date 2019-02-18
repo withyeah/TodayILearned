@@ -134,10 +134,14 @@
 
 - 백트래킹 알고리즘의 특징
   - 어떤 노드의 유망성을 점검한 후에 유망(Promising)하지 않다고 결정되면 그 노드의 부모로 되돌아가(Backtracking) 다음 자식 노드로 이동
+
   - 유망성 : 어떤 노드를 방문하였을 때 그 노드를 포함한 경로가 해답이 될 수 없으면 그 노드는 유망하지 않다고 함 / 해답의 가능성이 있으면 유망하다고 함 
+
   - 가지치기(Pruning) : 유망하지 않은 노드가 포함되는 경로는 더 이상 고려하지 않음 > 탐색하는 경우의 수를 줄일 수 있음
+
+    > 백트래킹 : DFS + 가지치기
 - 백트래킹을 이용한 알고리즘의 절차
-  1. 상태 공간 Tree의 깊이 우선 검색을 실시
+  1. 상태 공간 Tree의 깊이 우선 검색을 실시
   2. 각 노드가 유망한지를 점검
   3. 만일 그 노드가 유망하지 않으면, 그 노드의 부모 노드로 돌아가서 검색을 계속
 
@@ -197,7 +201,9 @@
             backtrack(a, k, input)
   
   
-  def construct_candidates(a, k, input, c): # 후보군을 구하는 함수 
+  def construct_candidates(a, k, input, c): 
+      # 후보군을 구하는 함수
+      # 여기서는 간단하지만 이 프레임워크를 나중에 복잡하게 사용할 수 있음ㄴ
       c[0] = True
       c[1] = False
       return 2
@@ -214,9 +220,148 @@
   a = [0]*NMAX
   backtrack(a, 0, 3)
   ```
+- ```
+  123
+  12
+  13
+  1
+  23
+  2
+  3
+  ```
+
+
 
 - backtrack 함수의 상태 공간 트리
   ![image](https://user-images.githubusercontent.com/45819975/52914197-e7030300-3308-11e9-8a24-a72d703e443d.png)
+
+>추가자료
+
+- ```C
+  backtrack(a[ ], k, input)
+  	c[MAXCANDIDATES]
+  	ncands
+  
+      IF k == input : process_solution(a[ ], k)
+  	ELSE
+  		k++
+  		make_candidates(a[ ], k, input, c[ ], ncands)
+  		FOR i in 0 → ncands - 1
+  			a[k] ← c[i]
+  			backtrack(a, k, input)
+  main( )
+  	a[MAX]                // powerset을 저장할 배열
+  	backtrack(a[ ], 0, 3) // 3개의 원소를 가지는 powerset
+  ```
+
+
+
+- 연습문제2
+
+  > {1,2,3,4,5,6,7,8,9,10}의 powerset 중 원소의 합이 10인 부분집합을 모두 출력하시오.
+
+  ```python
+  def process_solution(a, k):
+      global cnt
+      sum = 0
+      for i in range(1, k+1):
+          if a[i]: 
+              sum += data[i]
+  	
+      if sum == 10:
+          for i in range(1, k+1):
+              if a[i]: 
+                  print(data[i], end=' ')
+          print()
+      cnt += 1 # process_solution이 몇 번 호출되는지 카운트 (부분집합의 개수)
+  
+  def make_candidates(a, k, input, c):
+      c[0] = True
+      c[1] = False
+      return 2
+  
+  def backtrack(a, k, input):
+      global MAXCANDIDATES, total_cnt
+      c = [0]*MAXCANDIDATES
+  
+      if k == input:
+          process_solution(a, k)
+      else:
+          k += 1
+          ncands = make_candidates(a, k, input, c)
+          for i in range(ncands):
+              a[k] = c[i]
+              backtrack(a, k, input)
+      total_cnt += 1 # backtrack이 몇 번 호출되는지 카운트
+  
+  MAXCANDIDATES = 100
+  NMAX = 100
+  data = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  a = [0]*NMAX
+  cnt = 0
+  total_cnt = 0
+  backtrack(a, 0, 10)
+  print(f'cnt : {cnt}')              # 부분집합의 개수 : 1024
+  print(f'total_cnt : {total_cnt}')  # backtrack : 2047번 호출
+  ```
+
+
+
+- 위 코드에서 가지치기 하면
+
+  ```python
+  # 함수에 sum 인자 추가
+  def process_solution(a, k, sum):
+      # 가지치기
+      if sum != 10:
+          return
+      global cnt
+  
+      for i in range(1, k+1):
+          if a[i]:
+              print(data[i], end=' ')
+      print()
+      cnt += 1
+  
+  def make_candidates(a, k, input, c):
+      c[0] = True
+      c[1] = False
+      return 2
+  
+  def backtrack(a, k, input, sum):
+      # 가지치기
+      if sum > 10:
+          return
+  
+      global MAXCANDIDATES, total_cnt
+      c = [0]*MAXCANDIDATES
+  
+      if k == input:
+          process_solution(a, k, sum)
+      else:
+          k += 1
+          ncands = make_candidates(a, k, input, c)
+          for i in range(ncands):
+              a[k] = c[i]
+              # 가지치기
+              if a[k]:
+                  backtrack(a, k, input, sum + data[k])
+              else:
+                  backtrack(a, k, input, sum)
+      total_cnt += 1
+  
+  MAXCANDIDATES = 100
+  NMAX = 100
+  data = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  a = [0]*NMAX
+  cnt = 0
+  total_cnt = 0
+  backtrack(a, 0, 10, 0)
+  print(f'cnt : {cnt}')
+  print(f'total_cnt : {total_cnt}')
+  ```
+
+  
 
 
 
@@ -260,6 +405,57 @@
 
 
 
+```python
+def process_solution(a, k, sum):
+# 가지치기
+if sum != 10:
+    return
+global cnt
+
+for i in range(1, k+1):
+    if a[i]:
+        print(data[i], end=' ')
+print()
+cnt += 1
+
+def make_candidates(a, k, input, c):
+    c[0] = True
+    c[1] = False
+    return 2
+
+def backtrack(a, k, input, sum):
+    # 가지치기
+    if sum > 10:
+        return
+
+global MAXCANDIDATES, total_cnt
+c = [0]*MAXCANDIDATES
+
+if k == input:
+    process_solution(a, k, sum)
+else:
+    k += 1
+    ncands = make_candidates(a, k, input, c)
+    for i in range(ncands):
+        a[k] = c[i]
+        # 가지치기
+        if a[k]:
+            backtrack(a, k, input, sum + data[k])
+        else:
+            backtrack(a, k, input, sum)
+total_cnt += 1
+
+MAXCANDIDATES = 100
+NMAX = 100
+data = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+a = [0]*NMAX
+cnt = 0
+total_cnt = 0
+backtrack(a, 0, 10, 0)
+print(f'cnt : {cnt}')
+print(f'total_cnt : {total_cnt}')
+```
+
 
 
 ## 분할정복
@@ -274,7 +470,7 @@
 
 
 
-- 거듭 제곱(Exponentiation) 알고리즘 : O(n)
+- 거듭 제곱(Exponentiation) 알고리즘 : O(n)
 
   ```python
   def Power(Base, Exponent):
@@ -286,12 +482,15 @@
       return result
   ```
 
-  ```
+
+```
   C2 = C * C
   C3 = C * C * C
   ...
   Cn = C * C * ... * C
-  ```
+```
+
+ 
 
 - 분할 정복 기반의 알고리즘 : O(log2n)
 
@@ -309,13 +508,13 @@
 
   ```
   C^8 = C * C * C * C * C * C * C * C
-  C^8 = C^4 * C^4 = (C^4)^2 = ((C^2)^2)^2
-  C^n = C^(n-1/2) * C^(n-1/2) * C = (C^(n-1/2))^2*C
-  Cn = n 이 짝수 : C^(n/2)*C^(n/2)
-  	 n 이 홀수 : C^((n-1)/2) * C^((n-1)/2) * C
+    C^8 = C^4 * C^4 = (C^4)^2 = ((C^2)^2)^2
+    C^n = C^(n-1/2) * C^(n-1/2) * C = (C^(n-1/2))^2*C
+    Cn = n 이 짝수 : C^(n/2)*C^(n/2)
+    	 n 이 홀수 : C^((n-1)/2) * C^((n-1)/2) * C
   ```
 
-
+  
 
 ### B. 퀵 정렬
 
@@ -356,6 +555,46 @@
 - 퀵 정렬은 최악의 경우 시간복잡도가  O(n^2) > 합병정렬에 비해 좋지 못함
 
   - 그런데 왜 `퀵` 정렬이라고 했을까? > 평균 시간복잡도가 O(nlogn)이기 때문
+
+
+
+```python
+def PrintArray():
+    for i in range(len(arr)):
+        print("%3d" % arr[i], end='')
+
+def partition(a, l, r):
+    pivot = a[l]
+    i = l
+    j = r
+
+    while i < j:
+        while a[i] <= pivot:
+            i += 1
+            if(i ==r):
+                break
+        while a[j] >= pivot:
+            j -= 1
+            if(j == l):
+                break
+        if i < j:
+            a[i], a[j] = a[j], a[i]
+    arr[l], arr[j] = arr[j], arr[l]
+    return j
+
+def quicksort(a, low, high):
+    if low < high:
+        pivot = partition(a, low, high)
+        quicksort(a, low, pivot-1)
+        quicksort(a, pivot+1, high)
+
+arr = [11, 45, 22, 81, 23, 34, 99, 22, 17]
+PrintArray()
+quicksort(arr, 0, len(arr)-1)
+PrintArray()
+```
+
+
 
 
 

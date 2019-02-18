@@ -4,6 +4,8 @@
 
 #### 알고리즘 D07_20190211
 
+복습_20190218
+
 
 
 ## Stack 자료구조의 개념
@@ -349,8 +351,8 @@
   
   def fibo1(n):
       global memo  # 안써도됨
-      if n >= 2 and len(memo) <= n:
-          memo.append(fibo1(n-1) + fibo1(n-2))
+      if n >= 2 and len(memo) <= n: # 아직 구해지지 않았다면 
+          memo.append(fibo1(n-1) + fibo1(n-2)) # 구해라
       return memo[n]
   
   memo = [0, 1]
@@ -358,6 +360,7 @@
   ```
 
   - 시간복잡도 : O(n)
+  - 재귀적 DP
 
 
 
