@@ -13,4 +13,4 @@ for tc in range(10):
         for i in range(len(line)-1):
             if line[i] == '1' and line[i+1] == '2':
                 ans += 1
-    print(f'#{tc+1} {ans})
+    print(f'#{tc+1} {ans}')
