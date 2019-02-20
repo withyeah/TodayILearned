@@ -250,7 +250,7 @@
 
 > Baby-gin game - Greedy로 풀기 / Counting 방법
 >
-> #continue 쓰는 이유 : TripletX2 또는 RunX2 경우 다시 while로 올려주기 위해서
+> continue 쓰는 이유 : TripletX2 또는 RunX2 경우 다시 while로 올려주기 위해서
 >
 > ```python
 > num = 123123
