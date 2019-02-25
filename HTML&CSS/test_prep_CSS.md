@@ -47,7 +47,7 @@
 
       - ##### <u>width, height, mt, mb 프로퍼티 지정불가, 상하여백은 line-height로 지정</u>
 
-      - span, a, strong, img, br, input, select, textarea, button
+      - span, a, strong, img,  br, input, select, textarea, button
 
    3. inline-block
 
