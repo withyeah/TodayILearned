@@ -12,6 +12,7 @@
     <orderEntry type="module" module-name="20190225" />
     <orderEntry type="module" module-name="20190226" />
     <orderEntry type="module" module-name="20190227" />
+    <orderEntry type="module" module-name="20190228" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />
