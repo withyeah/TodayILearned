@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../20190303/.idea/20190303.iml" filepath="$PROJECT_DIR$/../20190303/.idea/20190303.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../20190304/.idea/20190304.iml" filepath="$PROJECT_DIR$/../20190304/.idea/20190304.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/20190305.iml" filepath="$PROJECT_DIR$/.idea/20190305.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../20190306/.idea/20190306.iml" filepath="$PROJECT_DIR$/../20190306/.idea/20190306.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../20190307/.idea/20190307.iml" filepath="$PROJECT_DIR$/../20190307/.idea/20190307.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../20190308/.idea/20190308.iml" filepath="$PROJECT_DIR$/../20190308/.idea/20190308.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../../대전2반김예랑/대전2반김예랑/.idea/대전2반김예랑.iml" filepath="$PROJECT_DIR$/../../../../../대전2반김예랑/대전2반김예랑/.idea/대전2반김예랑.iml" />
     </modules>
   </component>
 </project>
