@@ -6,7 +6,7 @@ data = list(map(int, input().split()))
 stupid, clever = 0, 0
 for i in data:
     if i > 0:
-        clever += i
+        clever += i 
 for i in range(n-1):
     acorn = [0 for _ in range(n)]
     for j in range(i, n):
