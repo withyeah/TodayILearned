@@ -6,6 +6,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="20190308" />
     <orderEntry type="module" module-name="대전2반김예랑" />
+    <orderEntry type="module" module-name="20190311" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />
