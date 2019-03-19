@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="372ee27d-4991-40fe-969e-77381b693c54" name="Default Changelist" comment="" />
+    <list default="true" id="372ee27d-4991-40fe-969e-77381b693c54" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/20190305.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/20190305.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../20190308/.idea/20190308.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../20190308/.idea/20190308.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../20190312/.idea/20190312.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../20190312/.idea/20190312.iml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,87 +19,122 @@
     <session id="-1025633968">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.2" value="2" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.2" value="4" />
+          <entry key="project.open.time.3" value="3" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="25" />
-          <entry key="txt" value="6" />
+          <entry key="py" value="39" />
+          <entry key="txt" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="6" />
-          <entry key="Python" value="25" />
+          <entry key="PLAIN_TEXT" value="13" />
+          <entry key="Python" value="39" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="4666" />
+          <entry key="py" value="10962" />
           <entry key="txt" value="107" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="107" />
-          <entry key="Python" value="4666" />
+          <entry key="Python" value="10962" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/사칙연산다시풀기.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../20190318/연습문제3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state relative-caret-position="952">
+              <caret line="56" column="25" selection-start-line="52" selection-end-line="56" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../20190312/중복조합.py">
+        <entry file="file://$PROJECT_DIR$/../20190318/단순2진암호코드.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+            <state relative-caret-position="187">
+              <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../20190312/이항계수.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../20190312/조합.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-              <folding>
-                <marker date="1552354497764" expanded="true" signature="15:20" ph="..." />
-                <marker date="1552354497764" expanded="true" signature="131:136" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../20190312/순열.py">
+        <entry file="file://$PROJECT_DIR$/../20190319/이진수.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="18" selection-end-line="19" selection-end-column="13" />
+              <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../20190319/이진수2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" selection-start-line="3" selection-end-line="11" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../20190319/정식이의은행업무.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
               <folding>
-                <marker date="1552360534987" expanded="true" signature="15:20" ph="..." />
-                <marker date="1552360534987" expanded="true" signature="120:340" ph="..." />
+                <marker date="1552975389248" expanded="true" signature="89:296" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../20190319/정식이의은행업무_input.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../20190319/이진수2_input.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../20190319/이진수_input.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../20190318/단순2진암호코드_input.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5202">
+              <caret line="306" selection-start-line="306" selection-end-line="306" />
             </state>
           </provider>
         </entry>
@@ -146,12 +188,31 @@
         <option value="$PROJECT_DIR$/../20190312/중복순열.py" />
         <option value="$USER_HOME$/Downloads/미로1_input.txt" />
         <option value="$USER_HOME$/Downloads/미로1.py" />
+        <option value="$PROJECT_DIR$/../20190312/venv/농작물_input.txt" />
+        <option value="$PROJECT_DIR$/../20190312/venv/농작물.py" />
+        <option value="$PROJECT_DIR$/../20190318/heap.py" />
+        <option value="$PROJECT_DIR$/../20190318/inputoutputtest_input.txt" />
+        <option value="$PROJECT_DIR$/../20190318/inputoutputtest.py" />
+        <option value="$PROJECT_DIR$/../20190318/bitcal.py" />
+        <option value="$PROJECT_DIR$/../20190318/연습문제2.py" />
+        <option value="$PROJECT_DIR$/../20190318/연습문제3.py" />
+        <option value="$PROJECT_DIR$/../20190318/단순2진암호코드_input.txt" />
+        <option value="$PROJECT_DIR$/../20190318/단순2진암호코드.py" />
+        <option value="$PROJECT_DIR$/../../../../../보충/회전_input.txt" />
+        <option value="$PROJECT_DIR$/../../../../../보충/회전.py" />
+        <option value="$PROJECT_DIR$/../20190319/이진수_input.txt" />
+        <option value="$PROJECT_DIR$/../20190318/20190319/test.py" />
+        <option value="$PROJECT_DIR$/../20190319/이진수.py" />
+        <option value="$PROJECT_DIR$/../20190319/이진수2_input.txt" />
+        <option value="$PROJECT_DIR$/../20190319/이진수2.py" />
+        <option value="$PROJECT_DIR$/../20190319/정식이의은행업무_input.txt" />
+        <option value="$PROJECT_DIR$/../20190319/정식이의은행업무.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="695" />
-    <option name="width" value="1232" />
+    <option name="x" value="913" />
+    <option name="width" value="1014" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -162,23 +223,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="20190305" type="b2602c69:ProjectViewProjectNode" />
-              <item name="20190312" type="462c0819:PsiDirectoryNode" />
+              <item name="20190319" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../20190319" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -192,20 +253,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.미로1">
-    <configuration name="스파이조직" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="20190308" />
+  <component name="RunManager" selected="Python.정식이의은행업무">
+    <configuration name="이진수" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="20190319" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../20190308" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../20190319" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../20190308/스파이조직.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../20190319/이진수.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -214,19 +275,103 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="미로1" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="20190311" />
+    <configuration name="연습문제2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="20190318" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Downloads" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../20190318" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/Downloads/미로1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../20190318/연습문제2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="이진수2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="20190319" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../20190319" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../20190319/이진수2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="단순2진암호코드" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="20190318" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../20190318" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../20190318/단순2진암호코드.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="연습문제3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="20190318" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../20190318" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../20190318/연습문제3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="정식이의은행업무" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="20190319" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../20190319" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../20190319/정식이의은행업무.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -362,13 +507,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.스파이조직" />
-      <item itemvalue="Python.미로1" />
+      <item itemvalue="Python.연습문제2" />
+      <item itemvalue="Python.연습문제3" />
+      <item itemvalue="Python.이진수" />
+      <item itemvalue="Python.이진수2" />
+      <item itemvalue="Python.정식이의은행업무" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.미로1" />
-        <item itemvalue="Python.스파이조직" />
+        <item itemvalue="Python.정식이의은행업무" />
+        <item itemvalue="Python.이진수2" />
+        <item itemvalue="Python.이진수" />
+        <item itemvalue="Python.연습문제3" />
+        <item itemvalue="Python.연습문제2" />
       </list>
     </recent_temporary>
   </component>
@@ -386,20 +537,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="695" y="0" width="1232" height="1047" extended-state="0" />
+    <frame x="913" y="0" width="1014" height="1047" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10301507" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22643442" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33004385" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5372807" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.41666666" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5350877" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32894737" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -465,9 +616,9 @@
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$USER_HOME$/Downloads/미로1.py</url>
-          <line>89</line>
-          <option name="timeStamp" value="25" />
+          <url>file://$PROJECT_DIR$/../20190319/이진수2.py</url>
+          <line>4</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -511,6 +662,16 @@
       </expression>
     </expressions>
     <expressions id="watch">
+      <expression>
+        <expression-string>len(t)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>start-5</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>dir</expression-string>
         <language-id>Python</language-id>
@@ -616,6 +777,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Program Files/Python35/Lib/_bootlocale.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/미로1_input.txt" />
+    <entry file="file://$USER_HOME$/Downloads/미로1.py" />
+    <entry file="file://$PROJECT_DIR$/../20190312/venv/농작물_input.txt" />
+    <entry file="file://$PROJECT_DIR$/../20190312/venv/농작물.py" />
+    <entry file="file://$PROJECT_DIR$/사칙연산다시풀기.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../20190312/중복조합.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -623,17 +802,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../20190312/이항계수.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../20190312/조합.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding>
-            <marker date="1552354497764" expanded="true" signature="15:20" ph="..." />
-            <marker date="1552354497764" expanded="true" signature="131:136" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -641,10 +813,73 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="18" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/Python35/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="308" selection-start-line="308" selection-end-line="308" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../20190318/inputoutputtest_input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../20190312/이항계수.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../보충/회전_input.txt" />
+    <entry file="file://$PROJECT_DIR$/../../../../../보충/회전.py" />
+    <entry file="file://$PROJECT_DIR$/../20190318/heap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
           <folding>
-            <marker date="1552360534987" expanded="true" signature="15:20" ph="..." />
-            <marker date="1552360534987" expanded="true" signature="120:340" ph="..." />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../20190318/inputoutputtest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../20190318/bitcal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding>
+            <marker date="1552878502474" expanded="true" signature="18:23" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../20190318/연습문제2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../20190318/연습문제3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="56" column="25" selection-start-line="52" selection-end-line="56" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../20190318/단순2진암호코드_input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5202">
+          <caret line="306" selection-start-line="306" selection-end-line="306" />
         </state>
       </provider>
     </entry>
@@ -655,42 +890,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files/Python35/Lib/_bootlocale.py">
+    <entry file="file://$PROJECT_DIR$/../20190318/단순2진암호코드.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="187">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files/Python35/Lib/codecs.py">
+    <entry file="file://$PROJECT_DIR$/../20190319/이진수_input.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="331" selection-start-line="331" selection-end-line="331" />
+        <state relative-caret-position="51">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/미로1_input.txt">
+    <entry file="file://$PROJECT_DIR$/../20190318/20190319/test.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../20190319/이진수.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        <state relative-caret-position="119">
+          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/미로1.py">
+    <entry file="file://$PROJECT_DIR$/../20190319/이진수2_input.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="51">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../20190319/이진수2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="11" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../20190319/정식이의은행업무_input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../20190319/정식이의은행업무.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
           <folding>
-            <marker date="1552434045710" expanded="true" signature="988:1484" ph="..." />
-            <marker date="1552434045710" expanded="true" signature="1504:1630" ph="..." />
+            <marker date="1552975389248" expanded="true" signature="89:296" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/사칙연산다시풀기.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
