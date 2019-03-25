@@ -10,6 +10,7 @@
     <orderEntry type="module" module-name="20190318" />
     <orderEntry type="module" module-name="20190319" />
     <orderEntry type="module" module-name="moduialgorithm" />
+    <orderEntry type="module" module-name="20190325" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />
