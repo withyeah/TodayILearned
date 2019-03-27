@@ -2,7 +2,7 @@ import sys
 sys.stdin = open('최대상금_input.txt')
 
 def dfs(d):
-    global change, maxarr
+    global change, maxarr, depth
     if d == 0:
         if maxarr <= int(''.join(arr)):
             maxarr = int(''.join(arr))
@@ -10,6 +10,7 @@ def dfs(d):
     else:
         for i in range(len(arr)-1):
             for j in range(i+1, len(arr)):
+                depth += 1
                 arr[i], arr[j] = arr[j], arr[i]
                 dfs(d-1)
                 arr[i], arr[j] = arr[j], arr[i]
