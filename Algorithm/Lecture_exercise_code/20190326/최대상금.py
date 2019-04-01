@@ -16,7 +16,7 @@ def dfs(d):
                 arr[i], arr[j] = arr[j], arr[i]
 
 T = int(input())
-for tc in range(2):
+for tc in range(T):
     data, change = input().split()
     change = int(change)
     depth, maxarr = 0, 0
