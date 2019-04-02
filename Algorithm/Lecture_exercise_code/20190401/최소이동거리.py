@@ -1,3 +1,9 @@
+
+
+# 20190401 망한 코드임 참고 ㄴㄴ
+
+
+
 import sys
 sys.stdin = open('최소이동거리_input.txt')
 
