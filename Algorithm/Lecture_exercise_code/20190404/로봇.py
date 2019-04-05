@@ -1,3 +1,5 @@
+# 20190405 로봇에 코드 있음
+
 import sys
 sys.stdin = open('로봇_input.txt')
 
