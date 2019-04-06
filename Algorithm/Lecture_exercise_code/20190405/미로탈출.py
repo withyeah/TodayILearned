@@ -13,7 +13,6 @@ def BFS():
         for i in range(4):
             nr = r + dr[i]
             nc = c + dc[i]
-            # if nr < 0 or nr >= R or nc < 0 or nc >= C: continue
             if map[nr][nc] == 4:
                 return cnt + 1
             if map[nr][nc] == 1: continue
