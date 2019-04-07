@@ -1,9 +1,7 @@
 # TodayILearned
-20190406 everything up to date
+20190407 everything up to date
 
-coding test coming up
-
-
+flu alert
 
 ### Source
 
