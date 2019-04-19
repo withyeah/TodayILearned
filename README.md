@@ -1,5 +1,5 @@
 # TodayILearned
-20190418 everything up to date
+20190419 everything up to date
 
 flu alert
 
