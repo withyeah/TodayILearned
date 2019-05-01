@@ -4,7 +4,7 @@ def FF(no):
     # 현재 컴퓨터에서 방문안한 연결된 컴퓨터를 따라가면서 방문표시하고 카운트
     global sol
     for i in range(1, N+1): # 연결된 컴퓨터(열)
-        if arr[no][i] and not chk[i]:
+        if arr[no][i] and not chk[i] :
             chk[i] = 1
             sol += 1
             FF(i)
