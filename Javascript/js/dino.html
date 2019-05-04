@@ -206,10 +206,11 @@
                 ult
             */
             } else if (event.keyCode === 81) {
-                dino.style = "width: 120px; height: 120px;"
-                setTimeout(() => dino.style = "width: 140px; height: 140px;", 90)
-                setTimeout(() => dino.style = "width: 160px; height: 160px;", 180)
-                setTimeout(() => dino.style = "width: 180px; height: 180px;", 270)
+                dino.style = "width: 120px; height: 120px; marginTop: `${y}px`; marginLeft = `${x}px`;"
+                setTimeout(() => dino.style = "width: 140px; height: 140px; marginTop: `${y}px`; marginLeft = `${x}px`;", 90)
+                setTimeout(() => dino.style = "width: 160px; height: 160px; marginTop: `${y}px`; marginLeft = `${x}px`;", 180)
+                setTimeout(() => dino.style = "width: 180px; height: 180px; marginTop: `${y}px`; marginLeft = `${x}px`;", 270)
+                setTimeout(() => manualSpace.style.display = "none", 270)
             }
 
 
