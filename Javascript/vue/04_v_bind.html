@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-once</title>
+    <style>
+    img {
+        width: 500px;
+        height: auto;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Hello, {{ name }}</h1>
+        <h2>{{ Date() }}</h2>
+        <h3><input type="checkbox" v-model="emotion">누르면 행복해집니다.</h3>
+        <!-- <img v-bind:src="happy"> -->
+        <img :src="emotion ? happy : sad">
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                name: 'Vue',
+                emotion: false,
+                happy: 'https://images.unsplash.com/photo-1519171920866-a020bf47357b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+                sad: 'https://images.unsplash.com/photo-1533175069760-268143ce2e51?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+
+            }
+        })
+    </script>
+</body>
+</html>
