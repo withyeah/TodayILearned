@@ -1,5 +1,5 @@
 # TodayILearned
-20190524 everything up to date
+20190525 everything up to date
 
 Summer Break
 
