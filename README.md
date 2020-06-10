@@ -1,9 +1,11 @@
 # TodayILearned
-20190828 I'm at facebook innovation lab Korea
+오늘 배운 것을 기록합니다.
+
+What I've learned today.
 
 
 
-### Source
+### Reference
 
 ---
 
