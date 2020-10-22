@@ -1,5 +1,9 @@
 #### 04-2 ####
 
+# memory clear 작업
+list=ls()
+rm(list=ls())
+
 ## ---------------------------------------------------------------------- ##
 
 english <- c(90, 80, 60, 70)  # 영어 점수 변수 생성
@@ -26,6 +30,14 @@ df_midterm <- data.frame(english = c(90, 80, 60, 70),
                          class = c(1, 1, 2, 2))
 df_midterm
 
+new_data <- data.frame(sci = c(100, 20, 40, 30),
+                       nat = c(90, 95, 97, 88))
+new_data
+
+min(new_data$sci)
+max(new_data$sci)
+min(new_data$nat)
+max(new_data$nat)
 
 #### 04-3 ####
 
@@ -33,29 +45,29 @@ df_midterm
 install.packages("readxl")
 library(readxl)
 
-df_exam <- read_excel("excel_exam.xlsx")  # 엑셀 파일을 불러와서 df_exam에 할당
+df_exam <- read_excel("Data/excel_exam.xlsx")  # 엑셀 파일을 불러와서 df_exam에 할당
 df_exam                                   # 출력
 
 mean(df_exam$english)
 mean(df_exam$science)
 
 
-df_exam_novar <- read_excel("excel_exam_novar.xlsx")
+df_exam_novar <- read_excel("Data/excel_exam_novar.xlsx")
 df_exam_novar
 
-df_exam_novar <- read_excel("excel_exam_novar.xlsx", col_names = F)
+df_exam_novar <- read_excel("Data/excel_exam_novar.xlsx", col_names = F)
 df_exam_novar
 
 # 엑셀 파일의 세 번째 시트에 있는 데이터 불러오기
-df_exam_sheet <- read_excel("excel_exam_sheet.xlsx", sheet = 3)
+df_exam_sheet <- read_excel("Data/excel_exam_sheet.xlsx", sheet = 3)
 df_exam_sheet
 
 
 ## -------------------------------------------------------------------- ##
-df_csv_exam <- read.csv("csv_exam.csv")
+df_csv_exam <- read.csv("Data/csv_exam.csv")
 df_csv_exam
 
-df_csv_exam <- read.csv("csv_exam.csv", stringsAsFactors = F)
+df_csv_exam <- read.csv("Data/csv_exam.csv", stringsAsFactors = F)
 
 
 ## -------------------------------------------------------------------- ##
@@ -64,15 +76,15 @@ df_midterm <- data.frame(english = c(90, 80, 60, 70),
                          class = c(1, 1, 2, 2))
 df_midterm
 
-write.csv(df_midterm, file = "df_midterm.csv")
+write.csv(df_midterm, file = "Data/df_midterm.csv")
 
 
 ## -------------------------------------------------------------------- ##
-save(df_midterm, file = "df_midterm.rda")
+save(df_midterm, file = "Data/df_midterm.rda")
 
 rm(df_midterm)
 
-load("df_midterm.rda")
+load("Data/df_midterm.rda")
 
 
 ## -------------------------------------------------------------------- ##
@@ -85,13 +97,13 @@ data.frame(english, math)     # 데이터 프레임 생성
 
 # 엑셀 파일
 library(readxl)                                 # readxl 패키지 로드
-df_exam <- read_excel("excel_exam.xlsx")        # 엑셀 파일 불러오기
+df_exam <- read_excel("Data/excel_exam.xlsx")        # 엑셀 파일 불러오기
 
 # CSV 파일
-df_csv_exam <- read.csv("csv_exam.csv")         # CSV 파일 불러오기
-write.csv(df_midterm, file = "df_midterm.csv")  # CSV 파일로 저장하기
+df_csv_exam <- read.csv("Data/csv_exam.csv")         # CSV 파일 불러오기
+write.csv(df_midterm, file = "Data/df_midterm.csv")  # CSV 파일로 저장하기
 
 # Rda 파일
-load("df_midterm.rda")                          # Rda 파일 불러오기
-save(df_midterm, file = "df_midterm.rda")       # Rda 파일로 저장하기
+load("Data/df_midterm.rda")                          # Rda 파일 불러오기
+save(df_midterm, file = "Data/df_midterm.rda")       # Rda 파일로 저장하기
 
