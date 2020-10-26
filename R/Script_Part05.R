@@ -1,7 +1,11 @@
 #### 05-1 ####
 
+# memory clear 작업
+list=ls()
+rm(list=ls())
+
 ## -------------------------------------------------------------------- ##
-exam <- read.csv("csv_exam.csv")
+exam <- read.csv("Data/csv_exam.csv")
 
 head(exam)      # 앞에서부터 6행까지 출력
 head(exam, 10)  # 앞에서부터 10행까지 출력
@@ -43,6 +47,9 @@ df_new            # 출력
 df_new <- rename(df_new, v2 = var2)  # var2를 v2로 수정
 df_new
 
+df_new <- rename(df_new, first = var1)
+df_new
+
 
 #### 05-3 ####
 
@@ -57,6 +64,7 @@ df
 df$var_mean <- (df$var1 + df$var2)/2  # var_mean 파생변수 생성
 df
 
+str(df)
 
 ## -------------------------------------------------------------------- ##
 mpg$total <- (mpg$cty + mpg$hwy)/2  # 통합 연비 변수 생성
@@ -94,6 +102,16 @@ mpg$grade2 <- ifelse(mpg$total >= 30, "A",
                      ifelse(mpg$total >= 25, "B",
                             ifelse(mpg$total >= 20, "C", "D")))
 
+iris
+iris$wide <- iris$Sepal.Length * iris$Sepal.Width
+summary(iris$Sepal.Length)
+hist(iris$Sepal.Length)
+iris$level <- ifelse(iris$Sepal.Length >= 6.5, "A",
+                     ifelse(iris$Sepal.Length >= 5, "B", "C"))
+install.packages("ggplot2")
+library(ggplot2)
+qplot(iris$wide)
+iris
 
 ## -------------------------------------------------------------------- ##
 # 1.데이터 준비, 패키지 준비
@@ -119,4 +137,6 @@ mpg$test <- ifelse(mpg$total >= 20, "pass", "fail")  # 조건문 활용
 # 5.빈도 확인
 table(mpg$test)  # 빈도표 출력
 qplot(mpg$test)  # 막대 그래프 생성
+
+
 
