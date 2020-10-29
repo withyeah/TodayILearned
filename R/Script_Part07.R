@@ -129,3 +129,5 @@ boxplot(mpg$hwy)$stats
 # 극단치 결측 처리
 mpg$hwy <- ifelse(mpg$hwy < 12 | mpg$hwy > 37, NA, mpg$hwy)
 
+
+

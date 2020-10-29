@@ -270,3 +270,16 @@ total <- left_join(test1, test2, by = "id")
 # 세로로 합치기
 group_all <- bind_rows(group_a, group_b)
 
+
+
+
+
+## 연습문제 
+exam <- read.csv("Data/csv_exam.csv")
+
+exam %>% 
+  group_by(class) %>% 
+  mutate(total = (math + english + science)) %>% 
+  summarise(tot_median = median(total)) %>% 
+  arrange(desc(tot_median)) %>% 
+  head(3)
