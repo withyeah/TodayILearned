@@ -34,8 +34,11 @@ df_nomiss2                 # 출력
 mean(df$score, na.rm = T)  # 결측치 제외하고 평균 산출
 sum(df$score, na.rm = T)   # 결측치 제외하고 합계 산출
 
-exam <- read.csv("csv_exam.csv")  # 데이터 불러오기
+exam <- read.csv("Data/csv_exam.csv")  # 데이터 불러오기
 exam[c(3, 8, 15), "math"] <- NA   # 3, 8, 15행의 math에 NA 할당
+exam
+
+exam[c(2, 7, 8), "english"] <- NA
 exam
 
 exam %>% summarise(mean_math = mean(math))  # math 평균 산출

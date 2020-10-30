@@ -1,0 +1,32 @@
+   
+   KoNLP 작업 하기 
+
+   R KoNLP 설치 주소 
+
+   설치 참조 영상
+   https://www.youtube.com/watch?v=Ewy8mEUriJg&t=30s
+
+   프로그램 관련 사이트
+   https://www.icesi.edu.co/CRAN/web/packages/KoNLP/index.html
+   
+  
+ 프로그램 관련 사이트 접속사 나오는 화면
+  (archive 부분누르면 프로그램 목록 나옴,
+   KoNLP_0.80.2.tar.gz 다운로드 받음 )
+  Package ‘KoNLP’ was removed from the CRAN repository.
+    
+
+Formerly available versions can be obtained from the archive.
+
+  [   ]	KoNLP_0.80.2.tar.gz	2020-01-18 13:33	799K	
+
+  설치 방법 
+  R studio에서 package 탭누르면 install 부분 있음.
+  다운로드 파일 KoNLP_0.80.2.tar.gz 선택 하여 설치 
+
+   
+  설치 디렉터리  확인
+  C:/Users/Bigdata/Documents/R/win-library/4.0/KoNLP 
+
+  scala-library-2.11.8.jar 설치 안된다는 메세지 나오면  
+  파일을 설치 디렉터리에 직접 복사 작업 한다.
