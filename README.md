@@ -3,7 +3,7 @@
 
 What I've learned today.
 
-last updated on October 1st 2020
+last updated on November 2020
 
 
 
