@@ -1,0 +1,15 @@
+<h2>Sum of neighbors</h2>
+<html>
+ <head></head>
+ <body>
+  <p></p>
+  <div class="alert alert-primary">
+   Wow! This problem is kind of tricky. If you're ready to put your thinking cap on, brace yourself and good luck! Otherwise, you can skip it for now and return any time later
+  </div>
+  <p></p> 
+  <p>Write a program, that takes the rectangular matrix from a sequence of lines as an input. The last line should contain the word <code class="java">end</code>, indicating the end of the input.</p> 
+  <p>The program should output the matrix of the same size, where each element in the position <code class="java">(i, j)</code> is equal to the sum of the elements from the first matrix on the positions of their neighbors: <code class="java">(i-1, j)</code><code class="java">(i+1, j)</code><code class="java">(i, j-1)</code>, <code class="java">(i, j+1)</code>. Boundary elements have neighbors on the opposite side of the matrix.</p> 
+  <p>In the case of one row or column, the element itself can be its neighbor.</p>
+ </body>
+</html><br><b>Sample Input:</b><br><pre><code class="language-no-highlight">9 5 3<br>0 7 -1<br>-5 2 9<br>end</code></pre><br><b>Sample Output:</b><br><pre><code class="language-no-highlight">3 21 22<br>10 6 19<br>20 16 -1</code></pre><br><br><b>Sample Input:</b><br><pre><code class="language-no-highlight">1<br>end</code></pre><br><b>Sample Output:</b><br><pre><code class="language-no-highlight">4</code></pre><br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 5 seconds</font><br><br>
+<a href="https://hyperskill.org/learn/step/1933">Show topic summary</a>
