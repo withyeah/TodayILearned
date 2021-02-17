@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>DTL for, if tags 연습</h1>
+    <h2>1. for tag</h2>
+    {% for menu in menus %}
+        {{menu}}
+    {% endfor %}
+    <hr>
+    {% for menu in menus %}
+        {{ forloop.counter }} : {{ menu }}
+    {% endfor %}
+    <hr>
+    {% for x in empty_list %}
+        {{ x }}
+    {% empty %}
+        <p>아무 것도 없어요!</p>
+    {% endfor %}
+    <hr>
+    <h2>2. if tag</h2>
+    {% if '짜장면' in menus %}
+        <p>짜장면은 고춧가루지!</p>
+    {% endif %}
+    <hr>
+    {% if empty_list|length > 10 %}
+        <p>길이가 10보다 크네요.<p>
+    {% else %}
+        <p>길이가 10보다 작네요.<p>
+    {% endif %}
+{% endblock content %}
