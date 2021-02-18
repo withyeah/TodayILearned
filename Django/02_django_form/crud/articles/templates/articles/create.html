@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1 class="text-center">CREATE</h1>
+  <form action="{% url 'articles:create' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit">
+  </form>
+  <hr>
+  <a href="{% url 'articles:index' %}">[back]</a>
+
+
+  <hr>
+
+  <form action="{% url 'articles:create' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div>
+      {{ form.title.errors }}
+      {{ form.title.label_tag }}
+      {{ form.title }}
+    </div>
+    <div>
+      {{ form.content.errors }}
+      {{ form.content.label_tag }}
+      {{ form.content }}
+    </div>
+    <input type="submit">
+  </form>
+
+
+  <hr>
+
+
+  <form action="{% url 'articles:create' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+      {% for field in form %}
+        {{ field.errors }}
+        {{ field.label_tag }}
+        {{ field }}
+      {% endfor %}
+    </div>
+    <input type="submit">
+  </form>
+
+  <hr>
+
+  <h2>Bootstrap Form</h2>
+  <form action="" method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+        {% if field.errors %}
+            {% for error in field.errors %}
+                <div class="alert alert-warning" role="alert">{{ error|escape }}</div>
+            {% endfor %}
+        {% endif %}
+        <div class="form-group">
+            {{ field.label_tag }}
+            {{ field }}
+        </div>
+    {% endfor %}
+    <button class="btn btn-primary">작성</button>
+
+{% endblock %}

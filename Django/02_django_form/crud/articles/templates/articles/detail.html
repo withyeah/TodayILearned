@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block content %}
+    <h2 class="text-center">DETAIL</h2>
+    <h3>{{ article.pk }} 번째 글</h3>
+    <hr>
+    <p>제목: {{ article.title }}</p>
+    <p>내용: {{ article.content }}</p>
+    {% comment %} <p>작성 시각: {{ article.created_at|date:"SHORT_DATE_FORMAT" }}</p>
+    <p>수정 시각: {{ article.updated_at|date:"M j, Y" }}</p> {% endcomment %}
+    <p>작성 시각: {{ article.created_at|naturalday }}</p>
+    <p>수정 시각: {{ article.updated_at|naturaltime }}</p>
+    <hr>
+    <a href="{% url 'articles:update' article.pk %}" class="btn btn-primary">UPDATE</a><br>
+    <form action="{% url 'articles:delete' article.pk %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="DELETE" class="btn btn-danger">
+    </form><br>
+    <a href="{% url 'articles:index' %}">[back]</a>
+{% endblock content %}
