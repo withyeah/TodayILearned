@@ -4,11 +4,12 @@
 {% block content %}
     <h2 class="text-center">DETAIL</h2>
     <h3>{{ article.pk }} 번째 글</h3>
+    {% if article.image %}
+        <img src="{{ article.image.url }}" alt="{{ article.image }}">
+    {% endif %}
     <hr>
     <p>제목: {{ article.title }}</p>
     <p>내용: {{ article.content }}</p>
-    {% comment %} <p>작성 시각: {{ article.created_at|date:"SHORT_DATE_FORMAT" }}</p>
-    <p>수정 시각: {{ article.updated_at|date:"M j, Y" }}</p> {% endcomment %}
     <p>작성 시각: {{ article.created_at|naturalday }}</p>
     <p>수정 시각: {{ article.updated_at|naturaltime }}</p>
     <hr>

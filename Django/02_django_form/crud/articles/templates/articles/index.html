@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'stylesheets/style.css' %}">
+{% endblock  %}
 
 {% block content %}
+    <img src="{% static 'articles/images/sample.png' %}" alt="sample">
+    
     <h1 class="text-center">Articles</h1>
     <a href="{% url 'articles:create' %}">[new]</a>
     <hr>

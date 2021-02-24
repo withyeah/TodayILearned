@@ -15,7 +15,7 @@ def index(request):
 @require_http_methods(['GET', 'POST'])
 def create(request):
     if request.method == 'POST':
-        form = ArticleForm(request.POST)
+        form = ArticleForm(request.POST, request.FILES)
         if form.is_valid():
             article = form.save()
             return redirect('articles:detail', article.pk)
