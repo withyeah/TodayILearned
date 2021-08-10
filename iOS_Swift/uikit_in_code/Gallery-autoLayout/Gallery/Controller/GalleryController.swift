@@ -82,21 +82,21 @@ class GalleryController: UIViewController {
       cardView2.widthAnchor.constraint(equalTo: safeArea.widthAnchor, multiplier: 0.5),
       cardView2.heightAnchor.constraint(equalTo: safeArea.heightAnchor,
                                         multiplier: 0.5),
-//      cardView2.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+      cardView2.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
 
       cardView3.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
       cardView3.topAnchor.constraint(equalTo: cardView1.bottomAnchor),
       cardView3.widthAnchor.constraint(equalTo: safeArea.widthAnchor, multiplier: 0.5),
       cardView3.heightAnchor.constraint(equalTo: safeArea.heightAnchor,
                                         multiplier: 0.5),
-//      cardView3.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+      cardView3.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
 
       cardView4.leadingAnchor.constraint(equalTo: cardView3.trailingAnchor),
       cardView4.topAnchor.constraint(equalTo: cardView2.bottomAnchor),
       cardView4.widthAnchor.constraint(equalTo: safeArea.widthAnchor, multiplier: 0.5),
       cardView4.heightAnchor.constraint(equalTo: safeArea.heightAnchor,
                                         multiplier: 0.5),
-//      cardView4.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+      cardView4.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
     ])
   }
 }
